@@ -30,7 +30,7 @@ code
 ```
 </details>
 
-## Business area
+## Business use
 
 From a business perspective, analyzing CS:GO match data is mostly beneficial for professional coaching staff, game developers, and the gambling industry. However, I used to be an avid CS:GO player having competed in it at national level. Therefore, I wanted to find new insights from match data by comparing the top teams to their competition. Some of the findings could have business impact by offering the professional teams statistics about key focus areas to develop on.
 
@@ -141,24 +141,28 @@ code
 
 Comparing these two values' correlation to map wins shows that FKs are noticeably more important. However, they both significantly correlate with map wins. 
 
-These results were also visualized. 
+These results were also visualized. The data was limited to matches where both of the teams were top 50. Additionally, each team had a minimum of 200 maps played. The following graph shows each team fulfilling the aforementioned limitations based on the average of FAs and its relation to map win percentage.
 
 ![tk21](https://github.com/user-attachments/assets/2297e6bc-0e7a-4a1c-b778-53d61aae3282)
 
-asd
+There is no clear, significant correlation visible. The next graph shows similarly FKs correlation to map win percentage:
 
 ![tk22](https://github.com/user-attachments/assets/6188766a-530c-4b14-9766-b5ca73431905)
 
+Here, the correlation is more visible. Thus, FKs are more important than FAs. However, FAs an area that can lead to higher FKs. 
+
 <details>
 
-<summary>Click to see the query</summary>
+<summary>Click to see the query for previous graphs</summary>
 
 ```
 code
 ```
 </details>
 
-### RQ3. Do the top teams win more eco rounds than lesser teams?
+### RQ3. Do top teams win more eco rounds than lesser teams?
+
+Eco rounds mean rounds where little to no money is spent. Thus, a team taking an eco plays only with pistols, whereas their opposition is likely playing with stronger weapons and better utility. Winning these rounds is quite rare and is definitely a swing in both teams' economies. 
 
 ![tk3](https://github.com/user-attachments/assets/dbd1552d-5e35-4b1a-b42b-57894eb1d9a6)
 
@@ -171,6 +175,8 @@ code
 ```
 </details>
 
+Based on these numbers the better the team, the more of these eco rounds they win. This was also visualized:
+
 ![tk31](https://github.com/user-attachments/assets/fea4b4b1-2fd1-4e2a-b068-42a33c2cbb9f)
 
 <details>
@@ -181,5 +187,16 @@ code
 code
 ```
 </details>
+
+Huomioitavaa on, että verrattavien ryhmien otoskoossa on eroja. Ranking erottelu suoritettiin
+ottamalla pelattujen otteluiden aikaisista rankingeista keskiarvo, joten top 10 sisältää
+ainoastaan joukkueet, jotka ovat olemassa olonsa aikana olleet lähes poikkeuksetta top 10,
+mikä on hyvin poikkeuksellista.
+Kuvaajasta voidaan havaita, että top 10 ja top 20 välillä on itse asiassa notkahdus, joten eri
+vertailuasteikolla ero voisi olla vähemmän merkittävä. Top 20 sisällä vaihtelua on kuitenkin
+huomattavasti vähemmän kuin huonommilla joukkueilla.
+Jos liiketoiminnan näkökulmasta halutaan olla todella menestynyt joukkue, niin olisi hyvä
+voittaa myös kierroksia, jolloin ei ole kovinkaan paljoa resursseja käytettävissä. Tämä vaatii
+siis mitä luultavimmin taidokkaampia pelaajia.
 
 ## Summary
