@@ -35,11 +35,11 @@ code
 From a business perspective, analyzing CS:GO match data is mostly beneficial for professional coaching staff, game developers, and the gambling industry. However, I used to be an avid CS:GO player having competed in it at national level. Therefore, I wanted to find new insights from match data by comparing the top teams to their competition. Some of the findings could have business impact by offering the professional teams statistics about key focus areas to develop on.
 
 ## Operative SQL queries
-I made 5 different queries that could be useful from a business perspective to the coaching staff of professional teams. I later indexed them to make them more optimized.
+I made 5 different queries that could be useful to the coaching staff of professional teams from a business perspective. I later indexed them to make them more optimized.
 
 ### 1. A team's played maps with their win rates
 <details>
-<summary>Click to see the queries used for creating the tables</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -49,7 +49,7 @@ code
 
 ### 2. A team's ct and t sided win rates for each map
 <details>
-<summary>Click to see the queries used for creating the tables</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -58,7 +58,7 @@ code
 
 ### 3. A player's match statistics from last 3 months
 <details>
-<summary>Click to see the queries used for creating the tables</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -67,7 +67,7 @@ code
 
 ### 4. A player's match statistics from last 3 months on each map
 <details>
-<summary>Click to see the queries used for creating the tables</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -76,7 +76,7 @@ code
 
 ### 5. A team's map based pistol round win rate
 <details>
-<summary>Click to see the queries used for creating the tables</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -92,7 +92,7 @@ The longer the match, the more entertaining it likely is. This balance could be 
 
 <details>
 
-<summary>Click to see the queries used</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -111,7 +111,7 @@ The annual averages of match lengths were also visualized:
 
 <details>
 
-<summary>Click to see the queries used</summary>
+<summary>Click to see the query</summary>
 
 ```
 code
@@ -120,26 +120,66 @@ code
 
 The graph shows that the trend of rounds played has been growing since 2016. The most remarkable difference was between 2018 and 2019 which could be explained by the update on 13.3.2019. However, a more interesting fact is that the value of _map_length_between_ was noticeable lower than the annual averages of both 2018 and 2019. Thus, the first update made the matches somewhat shorter. 
 
-Something to note is that the data from 2015 and 2020 is only partial.
+Something to noteworthy is that the data from 2015 and 2020 is only partial. Therefore, at least the data from 2015 could be unreliable.
 
-### RQ2.
+### RQ2. Does more flash assists or entry kills lead to more likely win?
+
+Flash assist (FA) means that that a kill was achieved while the opponent was blinded by utility, a flashbang grenade. A blinded enemy is way easier to eliminate and this can be achieved with coordinated teamwork. Thus, a higher number of FAs could indicate better teamwork. 
+
+Entry kills or first kills (FK) lead to an advantageous position as the situation turns into a 5vs4. After an FK the team with the advantage can overpower their opponents. 
 
 ![tk2](https://github.com/user-attachments/assets/fd83a814-346f-4a6c-abc4-6a46d07dd002)
 
+<details>
+
+<summary>Click to see the query</summary>
+
+```
+code
+```
+</details>
+
+Comparing these two values' correlation to map wins shows that FKs are noticeably more important. However, they both significantly correlate with map wins. 
+
+These results were also visualized. 
 
 ![tk21](https://github.com/user-attachments/assets/2297e6bc-0e7a-4a1c-b778-53d61aae3282)
 
-idk
+asd
 
 ![tk22](https://github.com/user-attachments/assets/6188766a-530c-4b14-9766-b5ca73431905)
 
+<details>
 
+<summary>Click to see the query</summary>
 
-### RQ3. 
+```
+code
+```
+</details>
+
+### RQ3. Do the top teams win more eco rounds than lesser teams?
 
 ![tk3](https://github.com/user-attachments/assets/dbd1552d-5e35-4b1a-b42b-57894eb1d9a6)
 
+<details>
+
+<summary>Click to see the query</summary>
+
+```
+code
+```
+</details>
+
 ![tk31](https://github.com/user-attachments/assets/fea4b4b1-2fd1-4e2a-b068-42a33c2cbb9f)
 
+<details>
+
+<summary>Click to see the query</summary>
+
+```
+code
+```
+</details>
 
 ## Summary
