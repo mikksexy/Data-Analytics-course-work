@@ -3,6 +3,17 @@ This is a showcase of a course work I did for TJTS4901 Database Systems and Data
 
 The aim of the course was researching a topic of interest with data analysis methods. The course work started with finding an interesting dataset and coming up with research questions or hypotheses based on it. Next, a database was set up and the data was transformed and loaded into the system. In order to answer the research questions, SQL queries and visualizations were implemented in a BI analytics tool. The queries were later indexed for better performance. A dashboard was created out of the visualizations. Finally, the dashboard and the findings were reported in a video format.
 
+## Skills portrayed
++ Complex SQL queries  
++ Query optimization  
++ Reporting
++ ETL
+
+Things to improve on:
+- Suggestions for business improvements
+- Visualizations
+- Edge cases
+
 ## Tools used
 Ubuntu in VirtualBox  
 PostgreSQL  
