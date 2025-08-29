@@ -8,7 +8,6 @@
  *  - Run this script from inside Postgres
  */
  
-/* tested with loaddir '/Users/gordonlinoff/Desktop/gordon/DM-SQL-v2/data' */
 
 
 CREATE TABLE Results (
@@ -283,3 +282,4 @@ CREATE TABLE Players (
 COPY Players FROM '/home/sami/database/data/players.csv'
     DELIMITER ','
 	CSV HEADER;
+
