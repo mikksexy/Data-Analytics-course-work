@@ -472,7 +472,7 @@ After - Soft parse: (37,231 + 37,829 + 37,233 + 37,321 + 37,764) / 5 = _37,4756_
 ```
 </details>
 
-### 4. A player's match statistics from last 3 months on each map
+### 4. A player's map based statistics from last 3 months
 <details>
 <summary>Click to see the query</summary>
 
@@ -1466,3 +1466,5 @@ According to the graph there is a dip between top 10 and top 20 teams. Therefore
 Based on this, from a business perspective, it might be reasonable to try to put more thought into these eco rounds which are often deemed as an instant loss. An interesting further research question would be to find out how an eco round win impacts the course of the match.
 
 ## Summary
+
+So, I set up a database on Ubuntu in VirtualBox. I found an interesting dataset and loaded it into the DB. I tried to think of potential stakeholders that could benefit from the dataset. Then, I constructed 5 different operative SQL queries for these stakeholders. I also practiced optimizing these queries by indexing. Lastly, I explored 3 "interesting" research questions. The task for the course work was to showcase complex SQL queries and so they are quite complex. After reviewing them, there are quite a few points to improve on. I could've looked more into WHILE statements and their viability to potentially shorten the queries. Anyhow, a lot was learned during this course work. 
