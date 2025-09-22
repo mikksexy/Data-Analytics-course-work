@@ -3,6 +3,30 @@ I started this project because I wanted to learn Power BI as it is very popular 
 
 My main objective was to create interactive dashboards for the operative SQL queries I had previously created. This proved to be a nice challenge as the the logic between the two is quite different.
 
+## Operational dashboards
+
+### Dashboard 1 
+
+TODO
+
+### Dashboard 2
+
+TODO
+
+### Dashboard 3 
+
+TODO
+
+### Dashboard 4 
+
+TODO
+
+### Dashboard 5 
+
+TODO
+
+# Tools and the process
+
 ## Azure SQL server
 ### Loading the data
 Setting up the DB was quite straightforward. However, picking the right tool for loading data into the DB was more difficult. 
@@ -33,3 +57,7 @@ I also noticed unexpected null values in some fields which I ended up allowing. 
 Previously, I had tried importing the data straight as a .csv. With this I ran into problems with float values as usual. 
 
 However, when I imported the data from SQL server, I didn't run into these issues. 
+
+### Creating the dashboards
+
+TODO
