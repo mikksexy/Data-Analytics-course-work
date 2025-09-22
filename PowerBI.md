@@ -3,6 +3,9 @@ I started this project because I wanted to learn Power BI as it is very popular 
 
 My main objective was to create interactive dashboards for the operative SQL queries I had previously created. This proved to be a nice challenge as the the logic between the two is quite different.
 
+TODO:
+- Split the README.md into "Introduction to course work and data", "Course work in SQL", and this file
+
 ## Operational dashboards
 
 ### Dashboard 1 
