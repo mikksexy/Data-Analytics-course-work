@@ -1,5 +1,5 @@
 # Extending the course work
-I started this project because I wanted to learn Power BI as it is very popular with enterprises. Additionally, in order to get some hands-on experience with Microsoft's products, I decided to move my course work's database to Azure SQL server.
+I started this project because I wanted to learn Power BI as it is very popular in the industry. Additionally, in order to get some hands-on experience with Microsoft's products, I decided to move my course work's database to Azure SQL server.
 
 My main objective was to create interactive dashboards for the operative SQL queries I had previously created. This proved to be a nice challenge as the the logic between the two is quite different.
 
