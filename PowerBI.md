@@ -61,6 +61,32 @@ Previously, I had tried importing the data straight as a .csv. With this I ran i
 
 However, when I imported the data from SQL server, I didn't run into these issues. 
 
+I started with a star schema, but ran into some problems later on. I decided to go with the following schema, where both Results and Economy share the same unique key pair: match_id + map. 
+
+```
+             ┌────────────┐
+             │   Picks    │   ← Central match-level table (unique match_id)
+             └────┬───────┘
+                  │
+         ┌────────┼──────────────┐
+         ▼                       ▼
+   ┌────────────┐         ┌────────────┐
+   │  Results   │         │  Players   │
+   │ (match_id+ │         │ (match_id+ │
+   │   map)     │         │ player_name│
+   └────────────┘         └────────────┘
+         │
+         ▼
+   ┌────────────┐
+   │  Economy   │
+   │ (match_id+ │
+   │   map+round│
+   └────────────┘
+
+```
+I did this by adding a new custom column to each table. ```
+match_map_key = Text.From([match_id]) & "_" & Text.From([map])```
+
 ### Creating the dashboards
 
 TODO
