@@ -10,11 +10,117 @@ TODO:
 
 ### Dashboard 1 
 
-TODO
+Creating a new table to help with selecting a team:
+```
+Teams =
+DISTINCT (
+    UNION (
+        SELECTCOLUMNS ( Results, "team", Results[team_1] ),
+        SELECTCOLUMNS ( Results, "team", Results[team_2] )
+    )
+)
+```
+
+Creating a measure to the same table:
+```
+SelectedTeam :=
+SELECTEDVALUE ( Teams[team] )
+```
+
+New measures to Results:
+
+```
+TotalMapsPlayed :=
+VAR team = [SelectedTeam]
+RETURN
+CALCULATE (
+    COUNTROWS ( Results ),
+    FILTER (
+        Results,
+        Results[team_1] = team || Results[team_2] = team
+    )
+)
+
+MapsWon :=
+VAR team = [SelectedTeam]
+RETURN
+CALCULATE (
+    COUNTROWS ( Results ),
+    FILTER (
+        Results,
+        (Results[map_winner] = "1" && Results[team_1] = team)
+            || (Results[map_winner] = "2" && Results[team_2] = team)
+    )
+)
+
+Winrate :=
+DIVIDE ( [MapsWon], [TotalMapsPlayed] )
+
+```
+Formatting the [Winrate] as percentage.
+
+<img width="639" height="490" alt="image" src="https://github.com/user-attachments/assets/2e8c8329-d04d-4026-a631-c405fc564d95" />
+
 
 ### Dashboard 2
 
-TODO
+Adding filtering by opponent rank. Started by adding a new table for the groups:
+
+```
+RankRanges = 
+DATATABLE (
+    "Range", STRING,
+    "MaxRank", INTEGER,
+    "SortOrder", INTEGER,
+    {
+        { "Top 5", 5,   5 },
+        { "Top 10", 10, 4 },
+        { "Top 30", 30, 3 },
+        { "Top 50", 50, 2 },
+        { "All", 250,  1 }
+    }
+)
+```
+
+Created a new measure:
+```
+SelectedRankMax :=
+SELECTEDVALUE ( RankRanges[MaxRank], 250 )
+```
+
+Adjusted the previous measures:
+```
+TotalMapsPlayed :=
+VAR team = [SelectedTeam]
+VAR maxRank = [SelectedRankMax]
+RETURN
+CALCULATE (
+    COUNTROWS ( Results ),
+    FILTER (
+        Results,
+        (Results[team_1] = team && Results[rank_2] <= maxRank)
+            || (Results[team_2] = team && Results[rank_1] <= maxRank)
+    )
+)
+
+
+MapsWon :=
+VAR team = [SelectedTeam]
+VAR maxRank = [SelectedRankMax]
+RETURN
+CALCULATE (
+    COUNTROWS ( Results ),
+    FILTER (
+        Results,
+        (
+            (Results[map_winner] = "1" && Results[team_1] = team && Results[rank_2] <= maxRank)
+            || (Results[map_winner] = "2" && Results[team_2] = team && Results[rank_1] <= maxRank)
+        )
+    )
+)
+```
+<img width="802" height="733" alt="image" src="https://github.com/user-attachments/assets/9bcff887-fe98-48a1-bfaf-26176cd2cbc4" />
+
 
 ### Dashboard 3 
 
